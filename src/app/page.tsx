@@ -172,8 +172,8 @@ const Hero = () => {
           <span className="inline-block py-1 px-3 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-6 border border-emerald-500/30">
             Trusted FMCG Partner
           </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
-            Delivering <span className="text-emerald-500">Quality</span> <br />
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6 tracking-tight">
+            Delivering <span className="text-emerald-500">Quality</span> <br className="hidden sm:block" />
             to Every Doorstep.
           </h1>
           <p className="text-base md:text-lg text-slate-300 mb-10 max-w-xl mx-auto leading-relaxed">
@@ -264,8 +264,8 @@ const Categories = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
           <div className="max-w-2xl">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.15]">
-              Premium Range of <br />
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-[1.15]">
+              Premium Range of <br className="hidden sm:block" />
               <span className="text-emerald-600">Daily Essentials.</span>
             </h2>
           </div>
@@ -457,8 +457,8 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-20">
             {/* Content Side */}
             <div className="lg:w-1/2">
-              <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.15] mb-8 tracking-tight">
-                Decades of <span className="text-emerald-500">Excellence</span> <br />
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 leading-[1.15] mb-8 tracking-tight">
+                Decades of <span className="text-emerald-500">Excellence</span> <br className="hidden sm:block" />
                 in Global Distribution.
               </h2>
 
