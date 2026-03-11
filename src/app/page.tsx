@@ -462,24 +462,54 @@ const WhyChooseUs = () => {
 
 const Stats = () => {
   const stats = [
-    { icon: Truck, label: "Distribution Hubs", value: "24" },
-    { icon: Users, label: "Happy Retailers", value: "15k+" },
-    { icon: ShieldCheck, label: "Quality Checks", value: "100%" },
-    { icon: MapPin, label: "Cities Covered", value: "120+" },
+    { icon: Truck, label: "Distribution Hubs", value: "24", suffix: "+", desc: "Across the region" },
+    { icon: Users, label: "Happy Retailers", value: "15k", suffix: "+", desc: "Active accounts" },
+    { icon: ShieldCheck, label: "Quality Checks", value: "100", suffix: "%", desc: "Every shipment" },
+    { icon: MapPin, label: "Cities Covered", value: "120", suffix: "+", desc: "And growing" },
   ];
 
   return (
-    <section className="py-20 bg-emerald-600">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
+    <section className="py-24 bg-slate-900 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/10 rounded-full blur-[120px]"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Section Label */}
+        <div className="text-center mb-16">
+          <span className="inline-block py-1 px-3 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-bold uppercase tracking-widest border border-emerald-500/20">
+            Our Impact In Numbers
+          </span>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {stats.map((stat, idx) => (
-            <div key={idx} className="text-center">
-              <div className="bg-white/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 backdrop-blur-sm border border-white/20">
-                <stat.icon className="text-white w-8 h-8" />
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-white/10 hover:border-emerald-500/30 transition-all duration-500"
+            >
+              {/* Icon */}
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center mb-6 group-hover:bg-emerald-500 group-hover:scale-110 transition-all duration-500">
+                <stat.icon className="text-emerald-400 w-6 h-6 group-hover:text-white transition-colors duration-500" />
               </div>
-              <p className="text-4xl font-bold text-white mb-2">{stat.value}</p>
-              <p className="text-emerald-100 text-sm font-medium uppercase tracking-wider">{stat.label}</p>
-            </div>
+
+              {/* Value */}
+              <p className="text-5xl font-black text-white tracking-tight leading-none mb-1">
+                {stat.value}<span className="text-emerald-400">{stat.suffix}</span>
+              </p>
+
+              {/* Accent line */}
+              <div className="w-8 h-[2px] bg-emerald-500/40 group-hover:w-16 transition-all duration-500 my-4"></div>
+
+              {/* Label */}
+              <p className="text-sm font-bold text-white/80 uppercase tracking-wider mb-1">{stat.label}</p>
+              <p className="text-xs text-slate-500">{stat.desc}</p>
+            </motion.div>
           ))}
         </div>
       </div>
