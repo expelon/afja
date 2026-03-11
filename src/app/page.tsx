@@ -432,11 +432,6 @@ const Footer = () => {
 
         <div className="border-t border-slate-200 pt-8 flex flex-col md:row justify-between items-center gap-4">
           <p className="text-slate-400 text-xs">© 2026 Afja FMCG Distribution. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="text-slate-400 hover:text-slate-600 transition-colors"><X className="w-4 h-4" /></a>
-            <a href="#" className="text-slate-400 hover:text-slate-600 transition-colors"><Users className="w-4 h-4" /></a>
-            <a href="#" className="text-slate-400 hover:text-slate-600 transition-colors"><Sparkles className="w-4 h-4" /></a>
-          </div>
         </div>
       </div>
     </footer>
@@ -460,43 +455,26 @@ export default function Home() {
         
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-20">
-            {/* Image Side */}
-            <div className="lg:w-1/2 relative group">
-              <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl aspect-[4/3]">
-                <Image 
-                  src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Our State-of-the-Art Warehouse" 
-                  fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-emerald-900/10 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0"></div>
-              </div>
-              
-              {/* Floating Highlight Card */}
-              <div className="absolute -bottom-8 -right-8 glass p-6 rounded-3xl shadow-xl animate-float z-20 max-w-[200px]">
-                <div className="bg-emerald-500 p-3 rounded-2xl w-fit mb-4 shadow-lg shadow-emerald-500/20">
-                  <ShieldCheck className="text-white w-6 h-6" />
-                </div>
-                <p className="text-2xl font-bold text-slate-900 mb-1">20+ Years</p>
-                <p className="text-[10px] text-emerald-600 font-bold uppercase tracking-widest">Industry Leadership</p>
-              </div>
-              
-              {/* Background Glow */}
-              <div className="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-emerald-500/10 blur-[120px] rounded-full"></div>
-            </div>
-
             {/* Content Side */}
             <div className="lg:w-1/2">
-              <div className="inline-flex items-center gap-2 py-1.5 px-3.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 text-[10px] font-bold uppercase tracking-widest mb-8">
-                <Users className="w-3.5 h-3.5" />
-                Our Heritage
-              </div>
-              
               <h2 className="text-4xl md:text-5xl font-bold text-slate-900 leading-[1.15] mb-8 tracking-tight">
                 Decades of <span className="text-emerald-500">Excellence</span> <br />
                 in Global Distribution.
               </h2>
+
+              {/* Mobile Image: Visible only on mobile, placed between heading and paragraph */}
+              <div className="lg:hidden w-full relative mb-10">
+                <div className="w-full relative z-10 rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200" 
+                    alt="Our State-of-the-Art Warehouse" 
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-emerald-900/10 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0"></div>
+                </div>
+              </div>
               
               <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed max-w-xl">
                 Founded with a vision to streamline the supply chain for essential goods, Afja has grown into a regional powerhouse. We don't just move products; we build lasting bridges between world-class brands and the communities they serve.
@@ -536,6 +514,20 @@ export default function Home() {
               <button className="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4.5 rounded-full font-bold text-base transition-all shadow-xl shadow-slate-900/10">
                 Read Full Story
               </button>
+            </div>
+
+            {/* Desktop Image Side: Hidden on mobile */}
+            <div className="hidden lg:block lg:w-1/2 relative group">
+              <div className="w-full relative z-10 rounded-xl overflow-hidden shadow-2xl aspect-[4/3]">
+                <Image 
+                  src="https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Our State-of-the-Art Warehouse" 
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-emerald-900/10 mix-blend-multiply transition-opacity duration-700 group-hover:opacity-0"></div>
+              </div>
             </div>
           </div>
         </div>
